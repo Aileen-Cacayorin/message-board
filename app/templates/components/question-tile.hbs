@@ -1,6 +1,6 @@
 <div class="container single-question-tile">
   <div class="row">
-    <li><a href="#">{{question.question}}</a></li>
+    <li>{{#link-to 'question' question.id}}{{question.question}}{{/link-to}}</li>
   </div>
 </div>
 

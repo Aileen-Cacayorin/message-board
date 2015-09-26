@@ -12,9 +12,11 @@ export default Ember.Component.extend({
       var params = {
         name: this.get('name'),
         date: new Date(),
-        question: this.get('question')
+        question: this.get('question'),
+        notes: this.get('notes')
       };
       this.sendAction('saveQuestion', params)
+      this.set('askQuestion', false)
 
     }
   }
