@@ -1,0 +1,29 @@
+{{#if showUpdateForm}}
+<div class="row">
+  <div class="six columns">
+    <label for="name">Name</label>
+    {{input class="u-full-width" value=name id="name" placeholder=question.name}}
+  </div>
+</div>
+<div class="row">
+  <label for="question?">What is your Question?</label>
+  {{textarea class="u-full-width" value=question? id="question?" placeholder=question.question}}
+</div>
+<div class="row">
+  <label for="notes">Additional Notes</label>
+  {{textarea class="u-full-width" value=notes id="notes" placeholder=question.notes}}
+</div>
+<div class="row">
+  <button {{action 'saveUpdate' question class="button-primary"}}>Save Changes</button>
+</div>
+
+{{else}}
+<div class="container">
+  <div class="row">
+    <button {{action 'updateThisQuestion' model}}>Update this Question</button>
+  </div>
+</div>
+
+{{/if}}
+
+{{yield}}

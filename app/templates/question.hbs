@@ -1,8 +1,17 @@
+<!-- question details, see question-details component template -->
 {{question-details question=model}}
+
+<!-- update question -->
+{{update-question question=model saveUpdate='saveUpdate'}}
+
+<!-- delete question button -->
 <div class="container">
   <div class="row">
     <button {{action 'deleteQuestion' model}}>Delete this question</button>
   </div>
 </div>
+
+
+
 
 {{outlet}}
