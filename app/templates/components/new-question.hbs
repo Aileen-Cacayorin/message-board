@@ -1,0 +1,20 @@
+
+{{#if askQuestion}}
+  <div class="row">
+    <div class="six columns">
+      <label for="name">Name</label>
+      {{input class="u-full-width" value=name id="name"}}
+    </div>
+  </div>
+  <div class="row">
+    <label for="exampleMessage">Message</label>
+    {{textarea class="u-full-width" value=question id="question" placeholder="Ask a question"}}
+  </div>
+  <div class="row">
+    <button {{action 'saveQuestion' class="button-primary"}}>Ask!</button>
+  </div>
+
+
+{{else}}
+  <button {{action 'newQuestionShow'}}>Ask a New Question</button>
+{{/if}}

@@ -1,1 +1,17 @@
+<div class="container">
+  <ul>
+    {{#each model as |single-question|}}
+      {{question-tile question=single-question}}
+    {{/each}}
+  </ul>
+</div>
+
+<div class="container new-question">
+  <div class="row">
+    {{new-question saveQuestion='saveQuestion'}}
+  </div>
+</div>
+
+
+
 {{outlet}}
