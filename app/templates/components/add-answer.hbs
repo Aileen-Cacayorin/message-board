@@ -1,0 +1,21 @@
+<form >
+  <div class="container">
+    <div class="row">
+      <div class="row">
+        <div class="six columns">
+          <label for="name">Name</label>
+          {{input class="u-full-width" value=name id="name"}}
+        </div>
+      </div>
+      <div class="row">
+        <label for="question">Answer</label>
+        {{textarea class="u-full-width" value=answer id="answer" placeholder="Answer this question"}}
+      </div>
+    </div>
+    <div class="row">
+      <button {{action 'saveAnswer' class="button-primary"}}>Send Answer!</button>
+    </div>
+  </div>
+</form>
+
+{{yield}}

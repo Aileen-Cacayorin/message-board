@@ -1,22 +1,25 @@
 
 {{#if askQuestion}}
-  <div class="row">
-    <div class="six columns">
-      <label for="name">Name</label>
-      {{input class="u-full-width" value=name id="name"}}
+
+  <form>
+    <div class="row">
+      <div class="six columns">
+        <label for="name">Name</label>
+        {{input class="u-full-width" value=name id="name"}}
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <label for="question">Question</label>
-    {{textarea class="u-full-width" value=question id="question" placeholder="Ask a question"}}
-  </div>
-  <div class="row">
-    <label for="notes">Additional Notes</label>
-    {{textarea class="u-full-width" value=notes id="notes" placeholder="Additional notes"}}
-  </div>
-  <div class="row">
-    <button {{action 'saveQuestion' class="button-primary"}}>Ask!</button>
-  </div>
+    <div class="row">
+      <label for="question">Question</label>
+      {{textarea class="u-full-width" value=question id="question" placeholder="Ask a question"}}
+    </div>
+    <div class="row">
+      <label for="notes">Additional Notes</label>
+      {{textarea class="u-full-width" value=notes id="notes" placeholder="Additional notes"}}
+    </div>
+    <div class="row">
+      <button {{action 'saveQuestion' class="button-primary"}}>Ask!</button>
+    </div>
+  </form>
 
 
 {{else}}
