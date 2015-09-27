@@ -11,7 +11,17 @@
   </div>
 </div>
 
+<!-- comments -->
+<div class="container">
+  <div class="row">
+    <ul>
+      {{#each model.answers as |answer-unit|}}
+        {{answer-tile answer=answer-unit}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
 
-
+<!-- add comment -->
 
 {{outlet}}
