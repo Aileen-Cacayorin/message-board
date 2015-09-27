@@ -1,3 +1,4 @@
+{{#if showNewAnswer}}
 <form >
   <div class="container">
     <div class="row">
@@ -17,5 +18,9 @@
     </div>
   </div>
 </form>
+{{else}}
+  <button {{action 'showAnswerForm'}}>Add Answer</button>
+
+{{/if}}
 
 {{yield}}

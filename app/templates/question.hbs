@@ -10,10 +10,11 @@
     <button {{action 'deleteQuestion' model}}>Delete this question</button>
   </div>
 </div>
-
+<br><br>
 <!-- comments -->
 <div class="container">
   <div class="row">
+    <h4>Answers:</h4>
     <ul>
       {{#each model.answers as |answer-unit|}}
         {{answer-tile answer=answer-unit}}
