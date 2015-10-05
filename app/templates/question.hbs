@@ -16,9 +16,10 @@
   <div class="row">
     <h4>Answers:</h4>
     <ul>
-      {{#each model.answers as |answer-unit|}}
+      {{ordered-answers answers=model.answers upvote='upvote' downvote='downvote'}}
+      <!-- {{#each model.answers as |answer-unit|}}
         {{answer-tile answer=answer-unit upvote='upvote' downvote='downvote'}}
-      {{/each}}
+      {{/each}} -->
     </ul>
   </div>
 </div>
