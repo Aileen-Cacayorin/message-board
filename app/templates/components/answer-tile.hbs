@@ -5,5 +5,9 @@ Posted: {{posted-ago answer.date}}
     <p>"{{answer.answer}}" -{{answer.name}}</p>
   </li>
 </p>
-
+<p>
+  {{answer.votes}} votes
+</p>
+<button{{action 'upvote' answer}}>Upvote!</button>
+<button{{action 'downvote' answer}}>Downvote</button>
 {{yield}}

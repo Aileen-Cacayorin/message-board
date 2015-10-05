@@ -10,11 +10,14 @@ export default Ember.Component.extend({
     saveAnswer() {
       var params = {
         name: this.get('name'),
-        date: new Date(),
+        date: Date.now(),
         answer: this.get('answer'),
+        votes: 0,
         question: this.get('question')
       }
       this.set('showNewAnswer', false);
+      this.set('name', '');
+      this.set('answer', '');
       this.sendAction('saveAnswer', params);
     }
   }

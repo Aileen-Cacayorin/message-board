@@ -11,7 +11,7 @@ export default Ember.Component.extend({
     saveQuestion() {
       var params = {
         name: this.get('name'),
-        date: new Date(),
+        date: Date.now(),
         question: this.get('question'),
         notes: this.get('notes')
       };

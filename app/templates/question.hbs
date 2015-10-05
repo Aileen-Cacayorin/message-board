@@ -17,7 +17,7 @@
     <h4>Answers:</h4>
     <ul>
       {{#each model.answers as |answer-unit|}}
-        {{answer-tile answer=answer-unit}}
+        {{answer-tile answer=answer-unit upvote='upvote' downvote='downvote'}}
       {{/each}}
     </ul>
   </div>
