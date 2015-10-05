@@ -1,13 +1,15 @@
-Posted: {{posted-ago answer.date}}
+<hr>
 
 <p>
   <li>
     <p>"{{answer.answer}}" -{{answer.name}}</p>
   </li>
 </p>
+Posted: {{posted-ago answer.date}}
 <p>
   {{answer.votes}} votes
 </p>
+
 <button{{action 'upvote' answer}}>Upvote!</button>
 <button{{action 'downvote' answer}}>Downvote</button>
 {{yield}}

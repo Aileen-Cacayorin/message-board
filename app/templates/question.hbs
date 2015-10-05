@@ -15,6 +15,9 @@
 <div class="container">
   <div class="row">
     <h4>Answers:</h4>
+    <!-- add comment -->
+    {{add-answer saveAnswer='saveAnswer' question=model}}
+
     <ul>
       {{ordered-answers answers=model.answers upvote='upvote' downvote='downvote'}}
       <!-- {{#each model.answers as |answer-unit|}}
@@ -24,7 +27,6 @@
   </div>
 </div>
 
-<!-- add comment -->
-{{add-answer saveAnswer='saveAnswer' question=model}}
+
 
 {{outlet}}
