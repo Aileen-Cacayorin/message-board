@@ -2,8 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
+  // why do i need to do this?  
+  beforeModel: function() {
+  return this.get("session").fetch().catch(function() {});
+  },
   model() {
-    return this.store.findAll('question')
+    return this.store.findAll('question', 'user')
   },
 
   actions: {
