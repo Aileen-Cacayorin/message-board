@@ -2,7 +2,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-    // why do i need to do this?  
+    // why do i need to do this?
   beforeModel: function() {
     return this.get("session").fetch().catch(function() {});
   },
@@ -26,6 +26,26 @@ export default Ember.Route.extend({
 
     signOut: function() {
       this.get("session").close();
+    },
+
+    signUp: function(params) {
+      this.set("firebase", newFirebase(config.firebase));
+      // var self - this;
+      this.get('firebase').createUser({
+        email: params.email,
+        password: params.password
+      }, function(error, userData) {
+        if (error) {
+          console.log("Error creating user:", error);
+        } else {
+          console.log("Successfully created user account with uid:", userData.uid);
+          this.get('firebase').child('users').child(userData.uid).set({
+            firstname: params.firstname,
+            lastname: params.lastname,
+            email: params.email,
+          });
+        }
+      });
     }
   }
 });
