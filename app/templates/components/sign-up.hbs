@@ -23,6 +23,9 @@
             {{input class="form-control" value=email id="email" placeholder="email"}}
           </div>
           <div class="form-group">
+            {{input class="form-control" value=username id="username" placeholder="username"}}
+          </div>
+          <div class="form-group">
             {{input class="form-control" value=password id="password" placeholder="password"}}
           </div>
 
@@ -30,7 +33,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" {{action 'signUp'}}>Submit</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"{{action 'signUp'}}>Submit</button>
       </div>
     </div>
   </div>

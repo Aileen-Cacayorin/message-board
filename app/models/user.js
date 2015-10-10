@@ -5,7 +5,7 @@ export default DS.Model.extend({
   lastname: DS.attr(''),
   username: DS.attr(''),
   email: DS.attr(''),
-  // uid: DS.attr(''),
+  uid: DS.attr(''),
   questions: DS.hasMany('question', {async: true}),
   answers: DS.hasMany('answer', {async: true})
 });

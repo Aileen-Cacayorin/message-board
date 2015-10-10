@@ -1,9 +1,10 @@
 {
   "users": [
     {
-      "firstName": "Sansa",
-      "lastName": "Stark",
+      "firstname": "Sansa",
+      "lastname": "Stark",
       "username": "ladyStark",
+      "email": "lady123@gmail.com",
       "uid": 0
 
     }
