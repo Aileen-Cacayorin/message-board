@@ -50,6 +50,7 @@ export default Ember.Route.extend({
     },
 
     upvote(answer) {
+    
       var newVotes = answer.get('votes');
       answer.set('votes', newVotes +1);
       answer.save();
