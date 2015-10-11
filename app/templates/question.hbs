@@ -2,7 +2,7 @@
 {{question-details question=model.question}}
 
 <!-- update question -->
-{{update-question question=model.question saveUpdate='saveUpdate'}}
+{{update-question question=model.question user=model.user saveUpdate='saveUpdate'}}
 
 <!-- delete question button -->
 <div class="container">
@@ -16,7 +16,7 @@
   <div class="row">
     <h4>Answers:</h4>
     <!-- add comment -->
-    {{add-answer saveAnswer='saveAnswer' question=model.question}}
+    {{add-answer saveAnswer='saveAnswer' question=model.question user=model.user}}
 
     <ul>
       {{ordered-answers answers=model.question.answers upvote='upvote' downvote='downvote'}}

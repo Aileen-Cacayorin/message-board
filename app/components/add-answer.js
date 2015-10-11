@@ -11,10 +11,12 @@ export default Ember.Component.extend({
       var params = {
         name: this.get('name'),
         date: Date.now(),
-        answer: this.get('answer'),
+        body: this.get('newAnswer'),
         votes: 0,
-        question: this.get('question')
+        question: this.get('question'),
+        user: this.get('user')
       }
+      debugger;
       this.set('showNewAnswer', false);
       this.set('name', '');
       this.set('answer', '');

@@ -13,10 +13,11 @@ export default Ember.Route.extend({
   },
   actions: {
     deleteQuestion(model) {
-      model.get('answers').forEach(function(answer) {
+      var question = model.question
+      question.get('answers').forEach(function(answer) {
         answer.destroyRecord();
       });
-      model.destroyRecord();
+      question.destroyRecord();
       this.transitionTo('index');
     },
 
@@ -31,29 +32,35 @@ export default Ember.Route.extend({
     },
 
     saveAnswer(params) {
+      debugger;
       var newAnswer = this.store.createRecord('answer', params);
       // newAnswer.save();
       // params.question.save();
+      debugger;
       var question = params.question;
+      var user = params.user;
       question.get('answers').addObject(newAnswer);
+      user.get('answers').addObject(newAnswer);
       newAnswer.save().then(function() {
+        user.save();
       return question.save();
         });
-        this.transitionTo('question', params.question);
+        debugger;
+        this.transitionTo('question');
     },
 
     upvote(answer) {
       var newVotes = answer.get('votes');
       answer.set('votes', newVotes +1);
       answer.save();
-      this.transitionTo('question', question.id);
+      this.transitionTo('question');
     },
 
     downvote(answer) {
       var newVotes = answer.get('votes');
       answer.set('votes', newVotes -1);
       answer.save();
-      this.transitionTo('question', question.id);
+      this.transitionTo('question');
     }
   }
 });
