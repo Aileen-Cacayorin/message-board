@@ -13,13 +13,17 @@
       </div>
       <div class="modal-body">
         <form>
-          
-
+          <div class="form-group">
+            {{input class="form-control" value=signInEmail id="signInEmail" placeholder="email"}}
+          </div>
+          <div class="form-group">
+            {{input class="form-control" value=signInPassword id="signInPassword" placeholder="password"}}
+          </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" {{action 'signIn'}}>Save changes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"{{action 'signIn'}}>Sign In</button>
       </div>
     </div>
   </div>

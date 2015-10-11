@@ -15,13 +15,28 @@ export default Ember.Route.extend({
 
     // what does this do?
     afterModel(model) {
-      return this.get('session').get('content').user = model.user;
+      return this.get('session').get('content').user = model;
     },
 
   actions: {
-    signIn: function(provider) {
-      this.get("session").open("firebase", { provider: provider}).then(function(data) {
-        console.log(data.currentUser);
+    // signIn: function(provider) {
+    //   this.get("session").open("firebase", { provider: provider}).then(function(data) {
+    //     console.log(data.currentUser);
+    //   });
+    // },
+
+    signIn: function(params){
+      debugger;
+      ref.authWithPassword({
+        email    : params.email,
+        password : params.password
+      }, function(error, authData) {
+        if (error) {
+          console.log("Login Failed!", error);
+        } else {
+          console.log("Authenticated successfully with payload:", authData);
+          window.location.reload();
+        }
       });
     },
 

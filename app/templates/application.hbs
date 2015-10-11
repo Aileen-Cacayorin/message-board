@@ -1,7 +1,11 @@
 <nav>
   <h1>{{#link-to "index"}}Welcome to the Game Haven{{/link-to}}</h1>
-  <li>{{login-modal}}</li>
+  <li>{{login-modal signIn='signIn'}}</li>
   <li>{{sign-up signUp="signUp"}}</li>
+  {{#if session.isAuthenticated}}
+    {{session}}
+    {{model.firstname}}
+  {{/if}}
 </nav>
 <div class="container">
   {{outlet}}
