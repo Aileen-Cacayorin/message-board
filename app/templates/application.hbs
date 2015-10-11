@@ -1,10 +1,12 @@
 <nav>
   <h1>{{#link-to "index"}}Welcome to the Game Haven{{/link-to}}</h1>
-  <li>{{login-modal signIn='signIn'}}</li>
-  <li>{{sign-up signUp="signUp"}}</li>
   {{#if session.isAuthenticated}}
     {{session}}
     {{model.firstname}}
+    <button class= "btn-btn-primary" {{action 'signOut'}}>Sign Out</button>
+  {{else}}
+  <li>{{login-modal signIn='signIn'}}</li>
+  <li>{{sign-up signUp="signUp"}}</li>
   {{/if}}
 </nav>
 <div class="container">

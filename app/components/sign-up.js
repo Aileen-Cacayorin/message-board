@@ -12,7 +12,6 @@ export default Ember.Component.extend({
         username: this.get('username'),
         password: this.get('password')
       };
-      debugger;
       this.sendAction('signUp', params);
     }
 
