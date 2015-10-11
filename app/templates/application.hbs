@@ -3,6 +3,7 @@
   {{#if session.isAuthenticated}}
     {{session}}
     {{model.firstname}}
+    {{#link-to 'profile' model.id}}My Profile{{/link-to}}
     <button class= "btn-btn-primary" {{action 'signOut'}}>Sign Out</button>
   {{else}}
   <li>{{login-modal signIn='signIn'}}</li>

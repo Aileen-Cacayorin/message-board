@@ -1,8 +1,8 @@
 <!-- question details, see question-details component template -->
-{{question-details question=model}}
+{{question-details question=model.question}}
 
 <!-- update question -->
-{{update-question question=model saveUpdate='saveUpdate'}}
+{{update-question question=model.question saveUpdate='saveUpdate'}}
 
 <!-- delete question button -->
 <div class="container">
@@ -16,10 +16,10 @@
   <div class="row">
     <h4>Answers:</h4>
     <!-- add comment -->
-    {{add-answer saveAnswer='saveAnswer' question=model}}
+    {{add-answer saveAnswer='saveAnswer' question=model.question}}
 
     <ul>
-      {{ordered-answers answers=model.answers upvote='upvote' downvote='downvote'}}
+      {{ordered-answers answers=model.question.answers upvote='upvote' downvote='downvote'}}
       <!-- {{#each model.answers as |answer-unit|}}
         {{answer-tile answer=answer-unit upvote='upvote' downvote='downvote'}}
       {{/each}} -->

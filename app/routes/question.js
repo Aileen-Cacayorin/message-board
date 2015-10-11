@@ -1,8 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  beforeModel: function() {
+  return this.get("session").fetch().catch(function() {});
+  },
   model(params) {
-    return this.store.findRecord('question', params.question_id);
+    var sessionId = this.get("session").content.uid;
+    return Ember.RSVP.hash({
+      question: this.store.findRecord('question', params.question_id),
+      user: this.store.findRecord('user', sessionId)
+    });
   },
   actions: {
     deleteQuestion(model) {

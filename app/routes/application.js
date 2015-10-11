@@ -28,7 +28,7 @@ export default Ember.Route.extend({
           console.log("Login Failed!", error);
         } else {
           console.log("Authenticated successfully with payload:", authData);
-          // window.location.reload();
+          window.location.reload();
         }
       });
     },
@@ -54,7 +54,7 @@ export default Ember.Route.extend({
             username: params.username,
             uid: userData.uid
           });
-        } 
+        }
       });
     }
   }

@@ -1,6 +1,6 @@
 <div class="container">
   <ul>
-    {{#each model as |single-question|}}
+    {{#each model.question as |single-question|}}
       {{question-tile question=single-question}}
     {{/each}}
   </ul>
@@ -8,7 +8,7 @@
 
 <div class="container new-question">
   <div class="row">
-    {{new-question saveQuestion='saveQuestion'}}
+    {{new-question user=model.user saveQuestion='saveQuestion'}}
   </div>
 </div>
 

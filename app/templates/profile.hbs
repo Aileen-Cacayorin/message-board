@@ -1,0 +1,11 @@
+{{model.firstname}}
+{{#each model.questions as |question|}}
+  {{question.question}}
+{{/each}}
+<br>
+
+{{#each model.answers as |answer|}}
+  {{answer.answer}}
+{{/each}}
+
+{{outlet}}

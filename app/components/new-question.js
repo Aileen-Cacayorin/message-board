@@ -13,8 +13,10 @@ export default Ember.Component.extend({
         name: this.get('name'),
         date: Date.now(),
         question: this.get('question'),
-        notes: this.get('notes')
+        notes: this.get('notes'),
+        user: this.get('user')
       };
+      debugger;
       this.sendAction('saveQuestion', params);
       this.set('askQuestion', false);
 
